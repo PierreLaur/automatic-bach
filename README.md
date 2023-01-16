@@ -1,4 +1,5 @@
 ## automatic-bach  
+Generate chord progressions to harmonize an input melody.
 
 ### Setup
 Requirements :
