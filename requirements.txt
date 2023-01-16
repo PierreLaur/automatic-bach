@@ -1,0 +1,4 @@
+minizinc==0.7.0
+pycodestyle==2.10.0
+pygame==2.1.2
+tomli==2.0.1
