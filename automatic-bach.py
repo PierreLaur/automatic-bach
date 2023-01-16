@@ -81,11 +81,11 @@ def main():
 
     model = Model("./automatic-bach.mzn")
     if args.minimize_distance:
-        model.add_string("solve minimize sum(chord_distances)")
+        model.add_string("solve minimize sum(chord_distances);")
     else :
         model.add_string("solve::int_search(chord_nums,input_order,indomain_random) satisfy;")
-        
-    model.add_string("constraint sum(chord_distances) <= melody_length*3")
+
+    model.add_string("constraint sum(chord_distances) <= melody_length*3;")
 
     solver = Solver.lookup("gecode")
     instance = Instance(solver, model)
