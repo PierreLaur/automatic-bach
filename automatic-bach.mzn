@@ -1,34 +1,34 @@
 include "globals.mzn";
 enum NOTES = {C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B};
 array[int] of set of NOTES : CHORDS = [
-                                        {C,E,G},  {C,Eb,G},  {C,Eb,Gb},
-                                        {Db,F,Ab},{Db,E,Ab}, {Db,E,G},
-                                        {D,Gb,A}, {D,F,A},   {D,F,Ab},
-                                        {Eb,G,Bb},{Eb,Gb,Bb},{Eb,Gb,A},
-                                        {E,Ab,B}, {E,G,B},   {E,G,Bb},
+                                        {C,E,G},  {C,Eb,G},
+                                        {Db,F,Ab},{Db,E,Ab},
+                                        {D,Gb,A}, {D,F,A},
+                                        {Eb,G,Bb},{Eb,Gb,Bb},
+                                        {E,Ab,B}, {E,G,B},
 
-                                        {F,A,C}, {F,Ab,C},   {F,Ab,B},
-                                        {Gb,Bb,Db},{Gb,A,Db},  {Gb,A,C},
-                                        {G,B,D}, {G,Bb,D},   {G,Bb,Db},
-                                        {Ab,C,Eb}, {Ab,B,Eb},   {Ab,B,D},
-                                        {A,Db,E}, {A,C,E},   {A,C,Eb},
-                                        {Bb,D,F}, {Bb,Db,F},   {Bb,Db,E},
-                                        {B,Eb,Gb}, {B,D,Gb},   {B,D,F}
+                                        {F,A,C}, {F,Ab,C},
+                                        {Gb,Bb,Db},{Gb,A,Db},
+                                        {G,B,D}, {G,Bb,D},
+                                        {Ab,C,Eb}, {Ab,B,Eb},
+                                        {A,Db,E}, {A,C,E},
+                                        {Bb,D,F}, {Bb,Db,F},
+                                        {B,Eb,Gb}, {B,D,Gb}
                                         ];
-enum CHORD_NAMES = {CM,Cm,Cdim,
-                    DbM,Dbm,Dbdim,          
-                    DM,Dm,Ddim,         
-                    EbM,Ebm,Ebdim,         
-                    EM,Em,Edim,
-                    FM,Fm,Fdim,
-                    GbM,Gbm,Gbdim,
-                    GM,Gm,Gdim,
-                    AbM,Abm,Abdim,
-                    AM,Am,Adim,
-                    BbM,Bbm,Bbdim,
-                    BM,Bm,Bdim};
+enum CHORD_NAMES = {CM,Cm,
+                    DbM,Dbm,         
+                    DM,Dm,         
+                    EbM,Ebm,        
+                    EM,Em,
+                    FM,Fm,
+                    GbM,Gbm,
+                    GM,Gm,
+                    AbM,Abm,
+                    AM,Am,
+                    BbM,Bbm,
+                    BM,Bm};
 
-array[1..1] of set of CHORD_NAMES : SCALE = [{CM, Dm, Em, FM, GM, Am, Bdim}] ;
+array[1..1] of set of CHORD_NAMES : SCALE = [{CM, Dm, Em, FM, GM, Am}] ;
 
 % INPUT
 int : melody_length ;

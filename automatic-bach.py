@@ -74,6 +74,8 @@ def main():
     parser.add_argument("melody")
     parser.add_argument("--minimize_distance", action='store_true')
     parser.add_argument("--a", action='store_true')
+    parser.add_argument("--limit_distances", action='store_true')
+    parser.add_argument("--max_number_dims", type=int)
 
     args = parser.parse_args()
     melody = args.melody.strip().split()
@@ -83,6 +85,9 @@ def main():
         model.add_string("solve minimize sum(chord_distances)")
     else :
         model.add_string("solve::int_search(chord_nums,input_order,indomain_random) satisfy;")
+    if args.limit_distances :
+        model.add_string("constraint sum(chord_distances) <= melody_length*3")
+
     solver = Solver.lookup("gecode")
     instance = Instance(solver, model)
     instance["melody"] = melody
