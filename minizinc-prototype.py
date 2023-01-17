@@ -79,7 +79,7 @@ def main():
     args = parser.parse_args()
     melody = args.melody.strip().split()
 
-    model = Model("./automatic-bach.mzn")
+    model = Model("./minizinc-prototype.mzn")
     if args.minimize_distance:
         model.add_string("solve minimize sum(chord_distances);")
     else :
